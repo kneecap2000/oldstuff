@@ -1,0 +1,79 @@
+if [raw_pepto_queue] =~ "ponyexpress_dpp_ink" {
+  ruby {
+    code => "event.set('raw_pepto_dpp_ink_percent_good_records', event.get('raw_pepto_payload_count_good').to_f / event.get('raw_pepto_payload_count_total').to_f)"
+  }
+  ruby {
+    code => "event.set('raw_pepto_dpp_ink_percent_bad_records', event.get('raw_pepto_payload_count_bad').to_f / event.get('raw_pepto_payload_count_total').to_f)"
+  }
+}
+if [raw_pepto_queue] =~ "ponyexpress_k9_k19" {
+  ruby {
+    code => "event.set('raw_pepto_k9_k19_percent_good_records', event.get('raw_pepto_payload_count_good').to_f / event.get('raw_pepto_payload_count_total').to_f)"
+  }
+  ruby {
+    code => "event.set('raw_pepto_k9_k19_percent_bad_records', event.get('raw_pepto_payload_count_bad').to_f / event.get('raw_pepto_payload_count_total').to_f)"
+  }
+}
+
+if [raw_pepto_queue] =~ "ponyexpress_k1_k8" {
+  ruby {
+    code => "event.set('raw_pepto_k1_k8_percent_good_records', event.get('raw_pepto_payload_count_good').to_f / event.get('raw_pepto_payload_count_total').to_f)"
+  }
+  ruby {
+    code => "event.set('raw_pepto_k1_k8_percent_bad_records', event.get('raw_pepto_payload_count_bad').to_f / event.get('raw_pepto_payload_count_total').to_f)"
+  }
+}
+
+if [raw_bat_pepto_good_records_count] {
+  ruby {
+    code => "event.set('raw_pepto_bat_percent_good_records', event.get('raw_bat_pepto_good_records_count').to_f / event.get('raw_bat_pepto_total_records_count').to_f)"
+  }
+}
+
+if [raw_bat_pepto_bad_records_count] {
+  ruby {
+    code => "event.set('raw_pepto_bat_total_percent_bad_records', event.get('raw_bat_pepto_bad_records_count').to_f / event.get('raw_bat_pepto_total_records_count').to_f)"
+  }
+}
+
+if [std_raw_pepto_record_count_bad] {
+  ruby {
+    code => "event.set('std_raw_pepto_percentage_bad_of_total', event.get('std_raw_pepto_record_count_bad').to_f / event.get('std_raw_pepto_record_count_total').to_f)"
+  }
+}
+
+if [std_raw_pepto_record_count_ini_invalid] {
+  ruby {
+    code => "event.set('std_raw_pepto_percentage_invalid_of_ini', event.get('std_raw_pepto_record_count_ini_invalid').to_f / event.get('std_raw_pepto_record_count_ini_total').to_f)"
+  }
+}
+
+if [std_raw_pepto_record_count_ini_valid] {
+  ruby {
+    code => "event.set('std_raw_pepto_percentage_valid_of_ini', event.get('std_raw_pepto_record_count_ini_valid').to_f / event.get('std_raw_pepto_record_count_ini_total').to_f)"
+  }
+}
+
+if [std_raw_pepto_record_count_invalid] {
+  ruby {
+    code => "event.set('std_raw_pepto_percentage_invalid_of_total', event.get('std_raw_pepto_record_count_invalid').to_f / event.get('std_raw_pepto_record_count_total').to_f)"
+  }
+}
+
+if [std_raw_pepto_record_count_valid] {
+  ruby {
+    code => "event.set('std_raw_pepto_percentage_valid_of_total', event.get('std_raw_pepto_record_count_valid').to_f / event.get('std_raw_pepto_record_count_total').to_f)"
+  }
+}
+
+if [std_raw_pepto_record_count_xml_invalid] {
+  ruby {
+    code => "event.set('std_raw_pepto_percentage_invalid_of_xml', event.get('std_raw_pepto_record_count_xml_invalid').to_f / event.get('std_raw_pepto_record_count_xml_total').to_f)"
+  }
+}
+
+if [std_raw_pepto_record_count_xml_valid] {
+  ruby {
+    code => "event.set('std_raw_pepto_percentage_valid_of_xml', event.get('std_raw_pepto_record_count_xml_valid').to_f / event.get('std_raw_pepto_record_count_xml_total').to_f)"
+  }
+}
